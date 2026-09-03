@@ -1,25 +1,31 @@
-<p align="center">
-  <a href="https://instantdb.com/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://instantdb.com/readmes/logo_with_text_dark_mode.svg">
-      <img alt="Shows the Instant logo" src="https://instantdb.com/readmes/logo_with_text_light_mode.svg">
-    </picture>
-  </a>
-</p>
+# InstantDB Agent Skills
 
-# InstantDB Skill
+[![InstantDB](https://instantdb.com/)](https://instantdb.com/)
 
-Turn your Claude, Codex, Gemini or any other agent in a full-fledged app builder
-with the InstantDB Skill!
+Agent skills for FIDScript self-hosted InstantDB development.
 
-This skill gives you agents a real-time backend that has a database, auth, storage, permissions all rolled in! You can even add
-payments and AI features with just a few prompts.
+## Skills
 
-To install the InstantDB Skill, run:
+| Skill | Description |
+| ----- | ----------- |
+| [instant-self](./skills/instant-self/) | FIDScript self-hosted InstantDB development mode for Claude Code and MCP-compatible editors |
+
+## Installation
+
+Install the FIDScript skill:
 
 ```bash
-npx skills add instantdb/skills
+npx skills add Mkid095/agent-skills -s instant-self
 ```
 
-Once installed, try jasking Claude to build you a full-stack app! (e.g. "Build me
-an instagram clone")
+## Requirements
+
+- A FIDScript self-hosted instance at `instant.fidscript.com`
+- A Personal Access Token from your dashboard
+- Claude Code, Cursor, Windsurf, or any MCP-compatible editor
+
+## FIDScript Self-Hosted
+
+FIDScript is the self-hosted deployment of InstantDB. Use the `instant-self` skill when working with `instant.fidscript.com` or `@fidscript/instant-mcp`.
+
+For InstantDB Cloud (instantdb.com), use the Instant Cloud SDK instead.
