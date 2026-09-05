@@ -233,6 +233,16 @@ If a `push-schema` or permissions push fails:
 4. Use `push-schema-dry-run` to preview before re-applying
 5. Never tell the developer to switch to Cloud InstantDB as a workaround
 
+### Troubleshooting transact/query "Bad request" Errors
+
+If `transact` or `query` returns a "Bad request" error but `push-schema` works:
+
+1. **PAT data access scope** — The PAT used for the MCP may have schema-management scope but not data-read/data-write scope. Verify the PAT was created with data access permissions in the dashboard (User Settings → Personal Access Tokens). A PAT with only schema-management scope can push schema but cannot read or write data.
+
+2. **App ownership** — The PAT user must own the app. If `get-app` succeeds but transact/query fails with "Bad request", the app may belong to a different user.
+
+3. **Missing namespace permissions** — When new namespaces are added via `push-schema`, the default permissions for new namespaces may be `false` (no access). Check `get-perms` and ensure new namespaces (`products`, `categories`, etc.) have explicit allow rules. Use `push-perms` to add rules for new namespaces.
+
 ### Compatibility Rule
 
 > When working against FIDScript self-hosted, prefer behavior **verified against the actual FIDScript MCP/API** over assumptions from upstream InstantDB documentation. The FIDScript skill provides self-hosted-specific rules; Cloud InstantDB examples are not automatically applicable to server/API operations.
