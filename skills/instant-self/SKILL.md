@@ -8,7 +8,7 @@ description: FIDScript self-hosted InstantDB development mode. Use when working 
 When `/instant-self` is invoked, enter FIDScript Self-Hosted Development Mode. Use the `instant-self` MCP server as the first-class interface for all FIDScript backend operations.
 
 **API:** `https://apiinstant.fidscript.com`
-**MCP:** `@fidscript/instant-mcp@0.4.1` (configured as `instant-self` in Claude Code)
+**MCP:** `@fidscript/instant-mcp@0.4.2` (configured as `instant-self` in Claude Code)
 
 ---
 
